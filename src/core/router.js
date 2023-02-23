@@ -16,7 +16,7 @@ function routeRender(routes) {
   history.replaceState(query, "");
 
   const currentRoute = routes.find((route) =>
-    new RegExp(route.path).test(hash)
+    new RegExp(`${route.path}/?$`).test(hash)
   );
 
   routerView.innerHTML = "";
