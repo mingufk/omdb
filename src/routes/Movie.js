@@ -25,26 +25,63 @@ export default class Movie extends Component {
       </div>
 
       <div class="text-center mt-4">
-        <div class="font-black text-5xl m-5">${upperTitle}&nbsp;(${
+        <h1 class="mb-4 text-3xl font-extrabold text-neutral-900 dark:text-neutral-50 md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-amber-700 from-amber-300">${upperTitle}</span> (${
       movie.Year
-    })</div>
-        <div>${movie.Country}</div>
-        <div>${movie.Rated}</div>
-        <div>${movie.Runtime}</div>
-        <div>${movie.Genre}</div>
-        <div>${movie.Released}</div>
-        <div>${movie.BoxOffice}</div>
-        <div>Director - ${movie.Director}</div>
-        <div>Writer - ${movie.Writer}</div>
-        <div>Actors - ${movie.Actors}</div>
+    })
+        </h1>
+
+        <span class="bg-amber-100 text-amber-800 text-2xl font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-amber-200 dark:text-amber-800 ml-2">${
+          movie.Rated
+        }</span>
+
+          <p class="my-2 tracking-tighter text-neutral-500 md:text-xl dark:text-neutral-50">${
+            movie.Country
+          }</p>
+          <p class="my-2 tracking-tight text-neutral-500 md:text-xl dark:text-neutral-50">${
+            movie.Runtime
+          }</p>
+          <p class="my-2 tracking-normal text-neutral-500 md:text-xl dark:text-neutral-50">${
+            movie.Genre
+          }</p>
+          <p class="my-2 tracking-wide text-neutral-500 md:text-xl dark:text-neutral-50">${
+            movie.Released
+          }</p>
+          <p class="my-2 tracking-wider font-semibold text-amber-500 md:text-2xl">${
+            movie.BoxOffice
+          }</p>
+
+        <hr class="w-48 h-1 mx-auto my-1 bg-neutral-100 border-0 rounded md:my-10 dark:bg-neutral-800/50">
+
+        <div class="flex justify-center">
+          <dl class="max-w-md text-neutral-900 dark:text-neutral-50">
+            <div class="pb-1">
+              <dt class="mb-1 text-neutral-500 md:text-xl dark:text-neutral-400">Director</dt>
+              <dd class="text-xl font-semibold">${movie.Director}</dd>
+            </div>
+            <div class="py-1">
+              <dt class="mb-1 text-neutral-500 md:text-xl dark:text-neutral-400">Writer</dt>
+              <dd class="text-xl font-semibold">${movie.Writer}</dd>
+            </div>
+            <div class="pt-1">
+              <dt class="mb-1 text-neutral-500 md:text-xl dark:text-neutral-400">Actors</dt>
+              <dd class="text-xl font-semibold">${movie.Actors}</dd>
+            </div>
+          </dl>
+        </div>
+        <hr class="w-48 h-1 mx-auto my-1 bg-neutral-100 border-0 rounded md:my-10 dark:bg-neutral-800/50">
         <div>
-          <h3>Ratings</h3>
+          <h2 class="mb-2 text-xl text-neutral-900 dark:text-neutral-400">Ratings</h2>
           ${movie.Ratings.map((rating) => {
-            return `<p>${rating.Source} - ${rating.Value}</p>`;
+            return `<p class="mb-2 space-y-1 text-2xl font-semibold text-neutral-500 list-inside dark:text-neutral-50">${rating.Source} - ${rating.Value}</p>`;
           }).join("")}
         </div>
-        <div>${movie.Awards}</div>
-        <div>${movie.Plot}</div>
+        <h2 class="my-8 text-2xl font-bold leading-none tracking-tight text-neutral-900 dark:text-neutral-50"><span class="underline underline-offset-3 decoration-8 decoration-amber-400 dark:decoration-amber-700">${
+          movie.Awards
+        }</span></h2>
+        <hr class="w-48 h-1 mx-auto my-1 bg-neutral-100 border-0 rounded md:my-10 dark:bg-neutral-800/50">
+        <p class="text-left my-3 font-light text-neutral-500 dark:text-neutral-400 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-bold first-letter:text-neutral-900 dark:first-letter:text-neutral-100 first-letter:mr-3 first-letter:float-left">${
+          movie.Plot
+        }</p>
       </div>
     `;
   }
