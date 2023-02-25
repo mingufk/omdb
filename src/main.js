@@ -1,7 +1,7 @@
-import './index.css'
+import "./index.css";
+import App from "./App";
+import router from "./routes";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <h1>OMDb</h1>
-  </div>
-`
+document.querySelector("#app").append(new App().el);
+
+router();
