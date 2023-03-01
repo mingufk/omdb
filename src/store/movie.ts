@@ -1,6 +1,6 @@
 import Store from "../core/store";
 
-interface SearchMovies {
+export interface SearchMovies {
   Title: string;
   Year: string;
   imdbID: string;
