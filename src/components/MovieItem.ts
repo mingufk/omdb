@@ -1,7 +1,15 @@
 import Component from "../core/component";
+import { SearchMovies } from "../store/movie";
+
+interface Props {
+  [key: string]: unknown;
+  movie: SearchMovies;
+}
 
 export default class MovieItem extends Component {
-  constructor(props) {
+  public declare props: Props;
+
+  constructor(props: Props) {
     super({
       props,
       tagName: "a",

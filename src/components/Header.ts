@@ -1,6 +1,16 @@
 import Component from "../core/component";
 
+interface State {
+  [key: string]: unknown;
+  links: {
+    href: string;
+    text: string;
+  }[];
+}
+
 export default class Header extends Component {
+  public declare state: State;
+
   constructor() {
     super({
       tagName: "header",

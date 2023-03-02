@@ -1,6 +1,14 @@
 import Store from "../core/store";
 
-export default new Store({
+interface State {
+  name: string;
+  gmail: string;
+  instagram: string;
+  github: string;
+  repository: string;
+}
+
+export default new Store<State>({
   name: "Mingu Kim",
   gmail: "mingufk@gmail.com",
   instagram: "https://www.instagram.com/mingufk/",
